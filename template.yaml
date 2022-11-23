@@ -1,0 +1,24 @@
+AWSTemplateFormatVersion: '2010-09-09'
+Transform: AWS::Serverless-2016-10-31
+Description: >
+  john-lambdas
+
+  Sample SAM Template for john-lambdas
+
+Globals:
+  Function:
+    Timeout: 300
+
+Resources:
+  addTimeStampFunction:
+    Type: AWS::Serverless::Function
+    Properties:
+      CodeUri: add_timestamp/
+      Handler: app.lambda_handler
+      Runtime: python3.7
+      Role: arn:aws:iam::755956835466:role/lambda_master_role
+
+Outputs:
+  addTimeStampFunction:
+    Description: "Add Timestamp Lambda Function ARN"
+    Value: !GetAtt addTimeStampFunction.Arn
