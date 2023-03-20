@@ -12,6 +12,7 @@ s3_client = boto3.client('s3')
 
 def lambda_handler(event, context):
     print(event)
+    print('complete')
     #get bucket name from event
     #get key from event
     #to be able to get bucket and key from event, google
